@@ -1,0 +1,15 @@
+C:\Sambeet\Working Folder\Saas\Saas.Script\bin\Debug\net5.0\Saas.Script.deps.json
+C:\Sambeet\Working Folder\Saas\Saas.Script\bin\Debug\net5.0\Saas.Script.dll
+C:\Sambeet\Working Folder\Saas\Saas.Script\bin\Debug\net5.0\ref\Saas.Script.dll
+C:\Sambeet\Working Folder\Saas\Saas.Script\bin\Debug\net5.0\Saas.Script.pdb
+C:\Sambeet\Working Folder\Saas\Saas.Script\obj\Debug\net5.0\Saas.Script.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sambeet\Working Folder\Saas\Saas.Script\obj\Debug\net5.0\Saas.Script.AssemblyInfoInputs.cache
+C:\Sambeet\Working Folder\Saas\Saas.Script\obj\Debug\net5.0\Saas.Script.AssemblyInfo.cs
+C:\Sambeet\Working Folder\Saas\Saas.Script\obj\Debug\net5.0\Saas.Script.csproj.CoreCompileInputs.cache
+C:\Sambeet\Working Folder\Saas\Saas.Script\obj\Debug\net5.0\Saas.Script.dll
+C:\Sambeet\Working Folder\Saas\Saas.Script\obj\Debug\net5.0\ref\Saas.Script.dll
+C:\Sambeet\Working Folder\Saas\Saas.Script\obj\Debug\net5.0\Saas.Script.pdb
+C:\Sambeet\Working Folder\Saas\Saas.Script\obj\Debug\net5.0\Saas.Script.csprojAssemblyReference.cache
+C:\Sambeet\Working Folder\Saas\Saas.Script\bin\Debug\net5.0\Saas.Model.dll
+C:\Sambeet\Working Folder\Saas\Saas.Script\bin\Debug\net5.0\Saas.Model.pdb
+C:\Sambeet\Working Folder\Saas\Saas.Script\obj\Debug\net5.0\Saas.Script.csproj.CopyComplete

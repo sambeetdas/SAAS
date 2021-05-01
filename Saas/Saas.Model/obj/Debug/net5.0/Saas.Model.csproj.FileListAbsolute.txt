@@ -1,0 +1,12 @@
+C:\Sambeet\Working Folder\Saas\Saas.Model\bin\Debug\net5.0\Saas.Model.deps.json
+C:\Sambeet\Working Folder\Saas\Saas.Model\bin\Debug\net5.0\Saas.Model.dll
+C:\Sambeet\Working Folder\Saas\Saas.Model\bin\Debug\net5.0\ref\Saas.Model.dll
+C:\Sambeet\Working Folder\Saas\Saas.Model\bin\Debug\net5.0\Saas.Model.pdb
+C:\Sambeet\Working Folder\Saas\Saas.Model\obj\Debug\net5.0\Saas.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sambeet\Working Folder\Saas\Saas.Model\obj\Debug\net5.0\Saas.Model.AssemblyInfoInputs.cache
+C:\Sambeet\Working Folder\Saas\Saas.Model\obj\Debug\net5.0\Saas.Model.AssemblyInfo.cs
+C:\Sambeet\Working Folder\Saas\Saas.Model\obj\Debug\net5.0\Saas.Model.csproj.CoreCompileInputs.cache
+C:\Sambeet\Working Folder\Saas\Saas.Model\obj\Debug\net5.0\Saas.Model.dll
+C:\Sambeet\Working Folder\Saas\Saas.Model\obj\Debug\net5.0\ref\Saas.Model.dll
+C:\Sambeet\Working Folder\Saas\Saas.Model\obj\Debug\net5.0\Saas.Model.pdb
+C:\Sambeet\Working Folder\Saas\Saas.Model\obj\Debug\net5.0\Saas.Model.csprojAssemblyReference.cache

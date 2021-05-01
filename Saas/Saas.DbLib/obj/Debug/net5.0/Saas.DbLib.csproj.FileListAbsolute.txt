@@ -1,0 +1,15 @@
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\bin\Debug\net5.0\Saas.DbLib.deps.json
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\bin\Debug\net5.0\Saas.DbLib.dll
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\bin\Debug\net5.0\ref\Saas.DbLib.dll
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\bin\Debug\net5.0\Saas.DbLib.pdb
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\obj\Debug\net5.0\Saas.DbLib.csprojAssemblyReference.cache
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\obj\Debug\net5.0\Saas.DbLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\obj\Debug\net5.0\Saas.DbLib.AssemblyInfoInputs.cache
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\obj\Debug\net5.0\Saas.DbLib.AssemblyInfo.cs
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\obj\Debug\net5.0\Saas.DbLib.csproj.CoreCompileInputs.cache
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\obj\Debug\net5.0\Saas.DbLib.dll
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\obj\Debug\net5.0\ref\Saas.DbLib.dll
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\obj\Debug\net5.0\Saas.DbLib.pdb
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\bin\Debug\net5.0\Saas.Model.dll
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\bin\Debug\net5.0\Saas.Model.pdb
+C:\Sambeet\Working Folder\Saas\Saas.DbLib\obj\Debug\net5.0\Saas.DbLib.csproj.CopyComplete
