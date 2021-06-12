@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Saas.Model.Service
 {
-    public class UserModel
+    public class SubscriptionModel
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid UserId { get; set; }       
-        [Required]
-        public string UserName { get; set; }
-        [Required]
-        public string Password { get; set; }
+        public Guid SubscriptionId { get; set; }
+
+        public string SubscriptionUser { get; set; }
+        public string SubscriptionPassword { get; set; }
+        public string SubscriptionType { get; set; }
 
         #region Standard Properties
         public string Status { get; set; }
