@@ -50,13 +50,20 @@ namespace Saas.DbLib
                 .ToTable("Scripts")
                 .HasKey(x => x.ScriptId)
                 .HasName("PrimaryKey_ScriptId");
+
+            modelBuilder.Entity<ItemModel>()
+                .ToTable("Items")
+                .HasKey(x => x.ItemId)
+                .HasName("PrimaryKey_ItemId");
+
         }
 
         //public virtual DbSet<BaseScript> BaseScript { get; set; }
         public virtual DbSet<UserModel> UserModel { get; set; }
         public virtual DbSet<ServiceReference> ServiceReference { get; set; }
         public virtual DbSet<ScriptReference> ScriptReference { get; set; }
-        
+        public virtual DbSet<ItemModel> itemModel { get; set; }
+
 
     }
 }
