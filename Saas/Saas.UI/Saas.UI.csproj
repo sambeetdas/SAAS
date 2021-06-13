@@ -24,10 +24,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\api\api.component.ts" />
+    <None Remove="ClientApp\src\app\login\login.component.ts" />
+    <None Remove="ClientApp\src\app\subscription\subscription.component.ts" />
     <None Remove="ClientApp\src\app\common\utility.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\api\api.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\subscription\subscription.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\utility.ts" />
   </ItemGroup>
 

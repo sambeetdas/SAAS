@@ -11,11 +11,13 @@ export class HomeComponent {
 
   public http: HttpClient;
   public utility: Utility;
+  public router: Router;
   public subscriptions: Subscriptions[];
 
-  constructor(http: HttpClient, utility: Utility) {
+  constructor(http: HttpClient, utility: Utility, router: Router) {
     this.http = http;
-    this.utility = utility
+    this.utility = utility;
+    this.router = router
   }
 
   ngOnInit() {
@@ -34,6 +36,10 @@ export class HomeComponent {
     this.http.get<Subscriptions[]>(this.utility.serverUrl + '/api/Subscription/GetAllSubscription', httpHeader).subscribe(result => {
       this.subscriptions = result;
     }, error => console.error(error));
+  }
+
+  Subscribe() {
+    this.router.navigate(['/subscribe']);
   }
 }
 
