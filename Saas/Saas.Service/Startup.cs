@@ -30,9 +30,21 @@ namespace Saas.Service
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllHeaders",
+                      builder =>
+                      {
+                          builder.AllowAnyOrigin()
+                                 .AllowAnyHeader()
+                                 .AllowAnyMethod();
+                      });
+            });
+
             string sqlConnectionStr = Configuration.GetConnectionString("SqlServerConnection");
             //services.AddDbContextPool<SaasDbContext>(options => options.UseSqlServer(sqlConnectionStr));
 
+            services.AddTransient<ISubscriptionDbManager, SubscriptionDbManager>(provider => new SubscriptionDbManager(sqlConnectionStr));
             services.AddTransient<IUserDbManager, UserDbManager>(provider =>  new UserDbManager(sqlConnectionStr));
             services.AddTransient<IScriptDbManager, ScriptDbManager>(provider => new ScriptDbManager(sqlConnectionStr));
             services.AddTransient<IServiceDbManager, ServiceDbManager>(provider => new ServiceDbManager(sqlConnectionStr));
@@ -48,6 +60,8 @@ namespace Saas.Service
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("AllowAllHeaders");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
