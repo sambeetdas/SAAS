@@ -13,10 +13,13 @@ namespace Saas.Model.Core
         public Guid ScriptId { get; set; }
         public string Script { get; set; }
         public string ScriptType { get; set; } //PRE/POST
+        
+        #region Standard Properties
         public string Status { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
         public string CreateUser { get; set; }
-        public string UpdateUSer { get; set; }
+        public string UpdateUser { get; set; }
+        #endregion
     }
 }

@@ -36,6 +36,16 @@ namespace Saas.DbLib
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<SubscriptionModel>()
+               .ToTable("Subscriptions")
+               .HasKey(x => x.SubscriptionId)
+               .HasName("PrimaryKey_SubscriptionId");
+
+            modelBuilder.Entity<SubscribedModel>()
+               .ToTable("Subscribed")
+               .HasKey(x => x.SubscribedId)
+               .HasName("PrimaryKey_SubscribedId");
+
             modelBuilder.Entity<UserModel>()
                 .ToTable("Users")                
                 .HasKey(x => x.UserId)
@@ -58,11 +68,12 @@ namespace Saas.DbLib
 
         }
 
-        //public virtual DbSet<BaseScript> BaseScript { get; set; }
+        public virtual DbSet<SubscriptionModel> SubscriptionModel { get; set; }
+        public virtual DbSet<SubscribedModel> SubscribedModel { get; set; }
         public virtual DbSet<UserModel> UserModel { get; set; }
         public virtual DbSet<ServiceReference> ServiceReference { get; set; }
         public virtual DbSet<ScriptReference> ScriptReference { get; set; }
-        public virtual DbSet<ItemModel> itemModel { get; set; }
+        public virtual DbSet<ItemModel> ItemModel { get; set; }
 
 
     }

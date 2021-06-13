@@ -19,11 +19,14 @@ namespace Saas.Model.Core
         public string Controller { get; set; }
         public string Action { get; set; }
         public List<ScriptReference> ScriptReferences { get; set; }
+        
+        #region Standard Properties
         public string Status { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
         public string CreateUser { get; set; }
-        public string UpdateUSer { get; set; }
-       
+        public string UpdateUser { get; set; }
+        #endregion
+
     }
 }

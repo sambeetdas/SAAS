@@ -3,12 +3,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Saas.Model.Core
 {
-    public class BaseScript
+    public class SubscribedModel
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid BaseScriptId { get; set; }
-        public string Script { get; set; }
-        
+        public Guid SubscribedId { get; set; }
+        public string SubscribedEmail { get; set; }
+        public string SubscribedPhone { get; set; }
+        public string SubscribedPassword { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public Guid SubscriptionId { get; set; }
+        public string SubcriptionCode { get; set; }
+
         #region Standard Properties
         public string Status { get; set; }
         public DateTime CreateDate { get; set; }
