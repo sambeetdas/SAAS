@@ -12,21 +12,34 @@ export class LoginComponent {
   public router: Router;
   public http: HttpClient;
   public utility: Utility;
-  public subscribed: LoginModel
+  public subscribe: SubscribedModel
 
   constructor(http: HttpClient, utility: Utility, router: Router) {
-    this.subscribed = new LoginModel();
+    this.subscribe = new SubscribedModel();
     this.router = router;
     this.http = http;
     this.utility = utility;
   }
 
   Login() {
-    this.router.navigate(['/api']);
+
+    const httpHeader = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+
+    this.http.post(this.utility.serverUrl + '/api/Subscription/ValidateSubscription', this.subscribe, httpHeader).subscribe(result => {
+      if (result != null) {
+        this.router.navigate(['/api']);
+      }      
+    }, error => {
+    });
   }
 }
 
-class LoginModel {
-  Email: string;
-  Password: string;
+class SubscribedModel {
+  subscribedEmail: string;
+  subscribedPassword: string;
 }
