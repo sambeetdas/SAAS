@@ -55,14 +55,26 @@ namespace Saas.DbLib.Implementation
             return null;
         }
 
-        public SubscribedModel GetsubscriptionForUser(string email, string phone)
+        public SubscribedModel GetsubscriptionForUser(string email = "", string phone = "")
         {
             dynamic result = null;
             try
             {
                 using (var context = new SaasDbContext(_sqlConnectionStr))
                 {
-                    result = context.SubscribedModel.FirstOrDefault(i => i.SubscribedEmail.ToUpper() == email.ToUpper() && i.SubscribedPhone == phone);
+                    if (!String.IsNullOrWhiteSpace(email) && !String.IsNullOrWhiteSpace(phone))
+                    {
+                        result = context.SubscribedModel.FirstOrDefault(i => i.SubscribedEmail.ToUpper() == email.ToUpper() && i.SubscribedPhone == phone);
+                    }
+                    else if (!String.IsNullOrWhiteSpace(email) && String.IsNullOrWhiteSpace(phone))
+                    {
+                        result = context.SubscribedModel.FirstOrDefault(i => i.SubscribedEmail.ToUpper() == email.ToUpper());
+                    }
+                    else if (String.IsNullOrWhiteSpace(email) && !String.IsNullOrWhiteSpace(phone))
+                    {
+                        result = context.SubscribedModel.FirstOrDefault(i => i.SubscribedPhone == phone);
+                    }
+
                 }
             }
             catch (Exception)
@@ -71,6 +83,26 @@ namespace Saas.DbLib.Implementation
             }
 
             return result;
+        }
+
+        public SubscribedModel ValidateSubsription(SubscribedModel subscribe)
+        {
+            try
+            {
+                var subscribedUser = GetsubscriptionForUser(subscribe.SubscribedEmail);
+                if (subscribedUser != null)
+                {
+                    if (subscribedUser.SubscribedPassword == subscribe.SubscribedPassword && subscribedUser.Status == "A")
+                    {
+                        return subscribe;
+                    }                   
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return null;
         }
     }
 }

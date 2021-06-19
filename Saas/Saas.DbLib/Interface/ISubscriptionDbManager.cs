@@ -12,5 +12,6 @@ namespace Saas.DbLib.Interface
         List<SubscriptionModel> GetAllActiveSubscription();
         SubscribedModel InsertSubscription(SubscribedModel subscribe);
         SubscribedModel GetsubscriptionForUser(string email, string phone);
+        SubscribedModel ValidateSubsription(SubscribedModel subscribe);
     }
 }

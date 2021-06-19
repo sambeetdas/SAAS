@@ -33,5 +33,12 @@ namespace Saas.Service.Controllers
             var subscribedUser = _subscriptionDbManager.InsertSubscription(subscribe);
             return subscribedUser;
         }
+
+        [HttpPost]
+        public SubscribedModel ValidateSubscription([FromBody] SubscribedModel subscribe)
+        {
+            var subscribedUser = _subscriptionDbManager.ValidateSubsription(subscribe);
+            return subscribedUser;
+        }
     }
 }
