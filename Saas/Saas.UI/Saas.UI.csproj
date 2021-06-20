@@ -28,6 +28,7 @@
     <None Remove="ClientApp\src\app\login\login.component.ts" />
     <None Remove="ClientApp\src\app\subscription\subscription.component.ts" />
     <None Remove="ClientApp\src\app\common\utility.ts" />
+	<None Remove="ClientApp\src\app\common\shared.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +36,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\login\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\subscription\subscription.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\utility.ts" />
+	<TypeScriptCompile Include="ClientApp\src\app\common\shared.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
