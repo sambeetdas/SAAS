@@ -12,7 +12,8 @@ export class LoginComponent {
   public router: Router;
   public http: HttpClient;
   public utility: Utility;
-  public subscribe: SubscribedModel
+  public subscribe: SubscribedModel;
+ 
 
   constructor(http: HttpClient, utility: Utility, router: Router) {
     this.subscribe = new SubscribedModel();

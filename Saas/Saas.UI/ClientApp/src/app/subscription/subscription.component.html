@@ -1,29 +1,29 @@
-<h2>Subsribe</h2>
+<h2>Subscribe {{selectedSubcriptionCode}}</h2>
 <hr />
 <form>
   <div class="form-group">
     <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="subscribe.subscribedEmail" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
   <div class="form-group">
     <label for="password">Phone</label>
-    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
+    <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="subscribe.subscribedPhone" placeholder="Phone">
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="subscribe.subscribedPassword" placeholder="Password">
   </div>
   <div class="form-group">
     <label for="password">Confirm Password</label>
-    <input type="password" class="form-control" id="password" name="password" placeholder="Confirm Password">
+    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="subscribe.subscribedConfirmPassword" placeholder="Confirm Password">
   </div>
   <div class="form-group">
-    <label for="password">First Name</label>
-    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+    <label for="firstname">First Name</label>
+    <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="subscribe.firstName" placeholder="First Name">
   </div>
   <div class="form-group">
-    <label for="password">Last Name</label>
-    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+    <label for="lastname">Last Name</label>
+    <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="subscribe.lastName" placeholder="Last Name">
   </div>
   <button type="submit" class="btn btn-primary" (click)="SubscribeUser()">Subscribe</button>
 </form>
