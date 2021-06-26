@@ -12,8 +12,9 @@ namespace Saas.Model.Core
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ScriptId { get; set; }
         public string Script { get; set; }
-        public string ScriptType { get; set; } //PRE/POST
-        
+        public string ScriptType { get; set; }
+        public Guid ServiceReferenceId { get; set; }
+
         #region Standard Properties
         public string Status { get; set; }
         public DateTime CreateDate { get; set; }

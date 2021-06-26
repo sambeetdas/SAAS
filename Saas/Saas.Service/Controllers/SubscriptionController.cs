@@ -24,8 +24,8 @@ namespace Saas.Service.Controllers
         [HttpGet]
         public List<SubscriptionModel> GetAllSubscription()
         {
-            var serviceDetails = _subscriptionDbManager.GetAllActiveSubscription();
-            return serviceDetails;
+            var subscriptionDetails = _subscriptionDbManager.GetAllActiveSubscription();
+            return subscriptionDetails;
         }
         
         [HttpPost]

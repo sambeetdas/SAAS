@@ -19,8 +19,8 @@ namespace Saas.Script.Implementation
             try
             {
                 string inputType = input.GetType().FullName;
-                string code = Util.GetCSharpScript(serviceScript, inputType);
-                var scriptOptions = Util.SetReferences(typeof(T));
+                string code = ScriptUtil.GetCSharpScript(serviceScript, inputType);
+                var scriptOptions = ScriptUtil.SetReferences(typeof(T));
                 var scriptState = CSharpScript.RunAsync(code: code,
                                                         options: scriptOptions,
                                                         globals: new ScriptBaseModel<T> { input = input} 

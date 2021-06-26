@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Saas.Script.Common
 {
-    public class Util
+    public class ScriptUtil
     {
         public static string GetCSharpScript(string serviceScript, string inputType)
         {

@@ -1,12 +1,25 @@
 <h2>API Dashboard</h2>
 <hr />
 <div>
-  <h1>TBD</h1>
-  <h3>Get Services and Scripts for logged in user.</h3>
-  <p>API Name</p>
-  <p>Controller</p>
-  <p>Action</p>
-  <p>API URL</p>
-  <p>Pre Script View, Add and Edit (Only for Enterprise user)</p>
-  <p>Post Script View, Add and Edit (Only for Enterprise user)</p>
+  Base URL : <b> {{utility.serverUrl}}</b>
+</div>
+<div class="accordion" id="accordionExample">
+  <div class="card" *ngFor="let service of services">
+    <div class="card-header" id="headingOne">
+     
+      <h2 class="mb-0">
+        <button class="btn btn-info btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <span *ngIf="service?.methodType == 'GET'" class="float-left badge badge-success">{{service?.methodType}}</span>
+          <span *ngIf="service?.methodType == 'POST'" class="float-left badge badge-danger">{{service?.methodType}}</span>
+          <span class="float-right">{{service?.action}}</span>
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        Resource : {{service?.resource}}
+      </div>
+    </div>
+  </div>
 </div>

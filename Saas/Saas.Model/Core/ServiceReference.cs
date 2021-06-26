@@ -18,6 +18,8 @@ namespace Saas.Model.Core
         public Guid ServiceReferenceId { get; set; }
         public string Controller { get; set; }
         public string Action { get; set; }
+        public string Resource { get; set; }
+        public string MethodType { get; set; }
         public List<ScriptReference> ScriptReferences { get; set; }
         
         #region Standard Properties

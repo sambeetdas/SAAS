@@ -10,6 +10,7 @@ namespace Saas.DbLib.Interface
 {
     public interface IServiceDbManager
     {
+        List<ServiceReference> GetAllServices();
         ServiceReference GetService(string controller, string action);
     }
 }

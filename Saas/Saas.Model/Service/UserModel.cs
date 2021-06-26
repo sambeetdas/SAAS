@@ -13,6 +13,9 @@ namespace Saas.Model.Service
         [Required]
         public string Password { get; set; }
 
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+
         #region Standard Properties
         public string Status { get; set; }
         public DateTime CreateDate { get; set; }
