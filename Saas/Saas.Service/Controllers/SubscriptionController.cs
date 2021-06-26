@@ -5,6 +5,7 @@ using Saas.Model.Service;
 using Saas.Script.Interface;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace Saas.Service.Controllers
@@ -30,6 +31,14 @@ namespace Saas.Service.Controllers
         [HttpPost]
         public SubscribedModel AddSubscription([FromBody] SubscribedModel subscribe)
         {
+            if (!ModelState.IsValid)
+            {
+                throw new ValidationException("Invalid Model");
+            }
+
+            subscribe.SubcriptionStartDate = DateTime.Now;
+            subscribe.SubcriptionEndDate = subscribe.SubcriptionStartDate.AddYears(1);
+
             var subscribedUser = _subscriptionDbManager.InsertSubscription(subscribe);
             return subscribedUser;
         }
@@ -37,6 +46,10 @@ namespace Saas.Service.Controllers
         [HttpPost]
         public SubscribedModel ValidateSubscription([FromBody] SubscribedModel subscribe)
         {
+            if (!ModelState.IsValid)
+            {
+                throw new ValidationException("Invalid Model");
+            }
             var subscribedUser = _subscriptionDbManager.ValidateSubsription(subscribe);
             return subscribedUser;
         }

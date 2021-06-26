@@ -12,8 +12,8 @@
       <ul class="list-unstyled mt-3 mb-4">
         <li>{{subscription?.services}}</li>
       </ul>
-      <button type="button" class="btn btn-lg btn-block btn-outline-primary" *ngIf="subscription?.amount == 0" (click)="Subscribe(subscription?.subscriptionId, subscription?.subcriptionCode)">Subscribe for free</button>
-      <button type="button" class="btn btn-lg btn-block btn-primary" *ngIf="subscription?.amount > 0" (click)="Subscribe(subscription?.subscriptionId, subscription?.subcriptionCode)" >Get started</button>
+      <button type="button" class="btn btn-lg btn-block btn-outline-primary" *ngIf="subscription?.amount == 0" (click)="Subscribe(subscription)">Subscribe for free</button>
+      <button type="button" class="btn btn-lg btn-block btn-primary" *ngIf="subscription?.amount > 0" (click)="Subscribe(subscription)" >Get started</button>
     </div>
   </div>
 </div>

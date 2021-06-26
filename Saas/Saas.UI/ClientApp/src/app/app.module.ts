@@ -28,7 +28,7 @@ import { Utility } from './common/utility';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'subscribe', component: SubscriptionComponent },
+      { path: 'subscribe/:subscriptionCode', component: SubscriptionComponent },
       { path: 'login', component: LoginComponent },
       { path: 'api', component: APIComponent },
     ])
