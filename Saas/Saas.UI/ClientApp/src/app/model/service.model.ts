@@ -6,7 +6,6 @@ export interface Service {
   action: string;
   resource: string;
   methodType: string;
-  scriptReferences: Script[];
   status: string;
   createDate: Date;
   updateDate: Date;
