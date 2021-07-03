@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { LoginComponent } from './login/login.component';
 import { APIComponent } from './api/api.component';
+import { ScriptComponent } from './script/script.component';
 import { Utility } from './common/utility';
 
 
@@ -20,7 +21,8 @@ import { Utility } from './common/utility';
     HomeComponent,
     SubscriptionComponent,
     LoginComponent,
-    APIComponent
+    APIComponent,
+    ScriptComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,6 +33,7 @@ import { Utility } from './common/utility';
       { path: 'subscribe/:subscriptionCode', component: SubscriptionComponent },
       { path: 'login', component: LoginComponent },
       { path: 'api', component: APIComponent },
+      { path: 'script/:serviceReferenceId', component: ScriptComponent },
     ])
   ],
   providers: [Utility],

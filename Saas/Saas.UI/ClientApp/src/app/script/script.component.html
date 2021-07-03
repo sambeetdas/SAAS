@@ -1,0 +1,11 @@
+<h2>Script</h2>
+<hr />
+
+<div *ngFor="let script of scripts">
+
+  <span>{{script?.scriptType}}</span>
+  <input type="text" value="{{script?.script}}" />
+  <input type="button" (click)="Validate(script)" value="Validate" />
+  <input type="button" (click)="ProcessScript(script)" value="Process" />
+</div>
+

@@ -1,4 +1,5 @@
 export interface Script {
+  scriptId: string;
   script: string;
   scriptType: string;
   status: string;

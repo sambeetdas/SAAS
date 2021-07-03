@@ -37,8 +37,13 @@ export class APIComponent {
     };
 
     this.http.get<Service[]>(this.utility.serverUrl + '/api/Service/GetAllServices', httpHeader).subscribe(result => {
-      console.log(result);
       this.services = result;
     }, error => console.error(error));
   }
+
+  GotoScript(serviceReferenceId: string) {
+
+    this.router.navigate(['/script', serviceReferenceId]);
+  }
+
 }
