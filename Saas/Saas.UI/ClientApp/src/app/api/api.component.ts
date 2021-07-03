@@ -42,7 +42,6 @@ export class APIComponent {
   }
 
   GotoScript(serviceReferenceId: string) {
-
     this.router.navigate(['/script', serviceReferenceId]);
   }
 

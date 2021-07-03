@@ -10,7 +10,10 @@
         HTTP Type
       </th>
       <th>
-        Name
+        Controller
+      </th>
+      <th>
+        Action
       </th>
       <th>
         Resource
@@ -29,10 +32,11 @@
         <span *ngIf="service?.methodType == 'DELETE'" class="float-left badge badge-danger">{{service?.methodType}}</span>
         <span *ngIf="service?.methodType == 'PUT'" class="float-left badge badge-warning">{{service?.methodType}}</span>
       </td>
+      <td>{{service?.controller}}</td>
       <td>{{service?.action}}</td>
       <td>{{service?.resource}}</td>
       <td>{{service?.updateDate}}</td>
-      <td><button type="button" class="btn btn-primary btn-sm" (click)="GotoScript(serviceReferenceId)">Script</button></td>
+      <td><button type="button" class="btn btn-primary btn-sm" (click)="GotoScript(service?.serviceReferenceId)">Script</button></td>
     </tr>
   </tbody>
 </table>

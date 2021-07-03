@@ -26,7 +26,7 @@ namespace Saas.Service.Controllers
         }
 
         [HttpPost]
-        public ScriptReference AddScript([FromBody] ScriptReference script)
+        public ScriptReference AddScript([FromBody] ScriptReference script) //TODO : Add SubscriptionId as Param
         {
             if (!ModelState.IsValid)
             {
@@ -39,7 +39,7 @@ namespace Saas.Service.Controllers
 
         [HttpGet]
         [Route("{serviceReferenceId}")]
-        public List<ScriptReference> GetServiceScript(Guid serviceReferenceId)
+        public List<ScriptReference> GetServiceScript(Guid serviceReferenceId) //TODO : Add SubscriptionId as Param
         {
             var scripts = _service.GetServiceScript(serviceReferenceId);
             return scripts;

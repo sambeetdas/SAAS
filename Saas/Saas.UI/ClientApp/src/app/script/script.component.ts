@@ -29,10 +29,11 @@ export class ScriptComponent {
   }
 
   ngOnInit() {
-    this.serviceReferenceId = this.activatedRoute.snapshot.params['serviceReferenceId'].toUpperCase();
+    this.serviceReferenceId = this.activatedRoute.snapshot.params['serviceReferenceId'];
+    this.GetScripts();
   }
 
-  GetSscripts() {
+  GetScripts() {
 
     const httpHeader = {
       headers: new HttpHeaders({

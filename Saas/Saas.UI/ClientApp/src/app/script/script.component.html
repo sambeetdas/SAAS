@@ -1,11 +1,18 @@
 <h2>Script</h2>
 <hr />
-
+<div class="row">
+  <button type="button" class="btn btn-dark btn-sm float-left" [routerLink]="['/api']">Back to API</button>
+</div>
+<br />
 <div *ngFor="let script of scripts">
-
-  <span>{{script?.scriptType}}</span>
-  <input type="text" value="{{script?.script}}" />
-  <input type="button" (click)="Validate(script)" value="Validate" />
-  <input type="button" (click)="ProcessScript(script)" value="Process" />
+  <div class="mb-3">
+    <h4 class="form-label">{{script?.scriptType}} Script</h4>
+    <textarea class="form-control" rows="3" [(ngModel)]="script.script">{{script?.script}}</textarea>
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-warning" type="button" (click)="Validate(script)">Validate</button>
+    <button class="btn btn-success" type="button" (click)="ProcessScript(script)">Process</button>
+  </div>
+  <hr />
 </div>
 
