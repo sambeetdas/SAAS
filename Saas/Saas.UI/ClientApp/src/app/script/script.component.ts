@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Utility } from '../common/utility';
 import { Script } from '../model/script.model';
-import { Console } from 'console';
+
 
 
 @Component({
