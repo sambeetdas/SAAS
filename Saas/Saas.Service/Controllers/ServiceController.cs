@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Saas.Business.Interface;
 using Saas.DbLib.Interface;
 using Saas.Model.Core;
 using System;
@@ -11,18 +12,16 @@ namespace Saas.Service.Controllers
     [ApiController]
     public class ServiceController : Controller
     {
-        private readonly IServiceDbManager _serviceDbManager;
-        private readonly IScriptDbManager _scriptDbManager;
-        public ServiceController(IServiceDbManager serviceDbManager, IScriptDbManager scriptDbManager)
+        private readonly ISaasService _service;
+        public ServiceController(ISaasService service)
         {
-            _serviceDbManager = serviceDbManager;
-            _scriptDbManager = scriptDbManager;
+            _service = service;
         }
 
         [HttpGet]
         public List<ServiceReference> GetAllServices()
         {
-            var serviceDetails = _serviceDbManager.GetAllServices();
+            var serviceDetails = _service.GetAllServices();
             return serviceDetails;
         }
 
@@ -34,7 +33,7 @@ namespace Saas.Service.Controllers
                 throw new ValidationException("Invalid Model");
             }
 
-            var insertedScript = _scriptDbManager.InsertScript(script);
+            var insertedScript = _service.AddScript(script);
             return insertedScript;
         }
 
@@ -42,7 +41,7 @@ namespace Saas.Service.Controllers
         [Route("{serviceReferenceId}")]
         public List<ScriptReference> GetServiceScript(Guid serviceReferenceId)
         {
-            var scripts = _scriptDbManager.GetScriptByServiceReference(serviceReferenceId);
+            var scripts = _service.GetServiceScript(serviceReferenceId);
             return scripts;
         }
     }

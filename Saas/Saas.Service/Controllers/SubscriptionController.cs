@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Saas.Business.Interface;
 using Saas.DbLib.Interface;
 using Saas.Model.Core;
 using Saas.Model.Service;
@@ -14,17 +15,17 @@ namespace Saas.Service.Controllers
     [ApiController]
     public class SubscriptionController : Controller
     {
-        private readonly ISubscriptionDbManager _subscriptionDbManager;
+        private readonly ISubscription _subscription;
 
-        public SubscriptionController(ISubscriptionDbManager subscriptionDbManager)
+        public SubscriptionController(ISubscription subscription)
         {
-            _subscriptionDbManager = subscriptionDbManager;
+            _subscription = subscription;
         }
 
         [HttpGet]
         public List<SubscriptionModel> GetAllSubscription()
         {
-            var subscriptionDetails = _subscriptionDbManager.GetAllActiveSubscription();
+            var subscriptionDetails = _subscription.GetAllSubscription();
             return subscriptionDetails;
         }
         
@@ -35,11 +36,7 @@ namespace Saas.Service.Controllers
             {
                 throw new ValidationException("Invalid Model");
             }
-
-            subscribe.SubcriptionStartDate = DateTime.Now;
-            subscribe.SubcriptionEndDate = subscribe.SubcriptionStartDate.AddYears(1);
-
-            var subscribedUser = _subscriptionDbManager.InsertSubscription(subscribe);
+            var subscribedUser = _subscription.AddSubscription(subscribe);
             return subscribedUser;
         }
 
@@ -50,7 +47,7 @@ namespace Saas.Service.Controllers
             {
                 throw new ValidationException("Invalid Model");
             }
-            var subscribedUser = _subscriptionDbManager.ValidateSubsription(subscribe);
+            var subscribedUser = _subscription.ValidateSubscription(subscribe);
             return subscribedUser;
         }
     }

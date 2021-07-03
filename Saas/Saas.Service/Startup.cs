@@ -1,22 +1,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Saas.DbLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Saas.DbLib.Interface;
+using Saas.Business.Implementation;
+using Saas.Business.Interface;
 using Saas.DbLib.Implementation;
-using Saas.Script.Interface;
+using Saas.DbLib.Interface;
 using Saas.Script.Implementation;
+using Saas.Script.Interface;
 
 namespace Saas.Service
 {
@@ -43,6 +37,15 @@ namespace Saas.Service
 
             string sqlConnectionStr = Configuration.GetConnectionString("SqlServerConnection");
             //services.AddDbContextPool<SaasDbContext>(options => options.UseSqlServer(sqlConnectionStr));
+
+            #region Business_Layer
+
+            services.AddTransient<ISubscription, Subscription>();
+            services.AddTransient<ISaasService, SaasService>();
+            services.AddTransient<IUser, User>();
+
+            #endregion
+
 
             services.AddTransient<ISubscriptionDbManager, SubscriptionDbManager>(provider => new SubscriptionDbManager(sqlConnectionStr));
             services.AddTransient<IUserDbManager, UserDbManager>(provider =>  new UserDbManager(sqlConnectionStr));

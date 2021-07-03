@@ -8,23 +8,6 @@ namespace Saas.Service.Common
 {
     public static class ServiceUtil
     {
-        public const string PreScript = "PRE";
-        public const string PostScript = "POST";
-        public static Dictionary<string, string> SetScript(IServiceDbManager serviceDbManager, string controllerName, string actionName)
-        {
-            Dictionary<string, string> scripts = new Dictionary<string, string>();
-            var serviceDetails = serviceDbManager.GetService(controllerName.ToUpper(), actionName.ToUpper());
-            if (serviceDetails != null
-                && serviceDetails.ScriptReferences != null
-                && serviceDetails.ScriptReferences.Any())
-            {
-                foreach (var scriptref in serviceDetails.ScriptReferences)
-                {
-                    scripts.Add(scriptref.ScriptType, scriptref.Script);
-                }
-            }
-
-            return scripts;
-        }
+        
     }
 }

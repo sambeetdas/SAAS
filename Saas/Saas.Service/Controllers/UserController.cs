@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Saas.Business.Interface;
 using Saas.DbLib.Interface;
 using Saas.Model.Service;
 using Saas.Script.Interface;
@@ -11,35 +12,16 @@ namespace Saas.Service.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        private readonly IUserDbManager _userDbManager;
-        private readonly IServiceDbManager _serviceDbManager;
-        private readonly IScriptManager _scriptManager;
-        public UserController(IUserDbManager userDbManager, IServiceDbManager serviceDbManager, IScriptManager scriptManager)
+        private readonly IUser _user;
+        public UserController(IUser user)
         {
-            _userDbManager = userDbManager;
-            _serviceDbManager = serviceDbManager;
-            _scriptManager = scriptManager;
+            _user = user;
         }
 
         [HttpPost]
         public UserModel AddUser([FromBody] UserModel user)
         {
-            var scripts = ServiceUtil.SetScript(_serviceDbManager,
-                                                this.ControllerContext.ActionDescriptor.ControllerName,
-                                                this.ControllerContext.ActionDescriptor.ActionName);
-
-            #region Pre Script
-            if (scripts.ContainsKey(ServiceUtil.PreScript) && !string.IsNullOrWhiteSpace(scripts[ServiceUtil.PreScript]))
-                _scriptManager.ExecuteScript<UserModel>(scripts[ServiceUtil.PreScript], ref user);
-            #endregion
-
-            var result = _userDbManager.InsertUser(user);
-
-            #region Post Script
-            if (scripts.ContainsKey(ServiceUtil.PostScript) && !string.IsNullOrWhiteSpace(scripts[ServiceUtil.PostScript]))
-                _scriptManager.ExecuteScript<UserModel>(scripts[ServiceUtil.PostScript], ref result);
-            #endregion
-
+            var result = _user.AddUser(user, this.ControllerContext.ActionDescriptor.ControllerName, this.ControllerContext.ActionDescriptor.ActionName);
             return result;
         }
 
@@ -47,23 +29,7 @@ namespace Saas.Service.Controllers
         [Route("{username}")]
         public UserModel GetUser(string username)
         {
-            var scripts = ServiceUtil.SetScript(_serviceDbManager,
-                                                this.ControllerContext.ActionDescriptor.ControllerName,
-                                                this.ControllerContext.ActionDescriptor.ActionName);
-
-            UserModel user = new UserModel();
-            #region Pre Script
-            if (scripts.ContainsKey(ServiceUtil.PreScript) && !string.IsNullOrWhiteSpace(scripts[ServiceUtil.PreScript]))
-                _scriptManager.ExecuteScript<UserModel>(scripts[ServiceUtil.PreScript], ref user);
-            #endregion
-
-            var result = _userDbManager.GetUserByUsername(username);
-
-            #region Post Script
-            if (scripts.ContainsKey(ServiceUtil.PostScript) && !string.IsNullOrWhiteSpace(scripts[ServiceUtil.PostScript]))
-                _scriptManager.ExecuteScript<UserModel>(scripts[ServiceUtil.PostScript], ref result);
-            #endregion
-
+            var result = _user.GetUser(username, this.ControllerContext.ActionDescriptor.ControllerName, this.ControllerContext.ActionDescriptor.ActionName);
             return result;
         }
 
@@ -71,23 +37,7 @@ namespace Saas.Service.Controllers
         [Route("{userId}")]
         public UserModel GetUserById(Guid userId)
         {
-            var scripts = ServiceUtil.SetScript(_serviceDbManager,
-                                                this.ControllerContext.ActionDescriptor.ControllerName,
-                                                this.ControllerContext.ActionDescriptor.ActionName);
-
-            UserModel user = new UserModel();
-            #region Pre Script
-            if (scripts.ContainsKey(ServiceUtil.PreScript) && !string.IsNullOrWhiteSpace(scripts[ServiceUtil.PreScript]))
-                _scriptManager.ExecuteScript<UserModel>(scripts[ServiceUtil.PreScript], ref user);
-            #endregion
-
-            var result = _userDbManager.GetUserById(userId);
-
-            #region Post Script
-            if (scripts.ContainsKey(ServiceUtil.PostScript) && !string.IsNullOrWhiteSpace(scripts[ServiceUtil.PostScript]))
-                _scriptManager.ExecuteScript<UserModel>(scripts[ServiceUtil.PostScript], ref result);
-            #endregion
-
+            var result = _user.GetUserById(userId, this.ControllerContext.ActionDescriptor.ControllerName, this.ControllerContext.ActionDescriptor.ActionName);
             return result;
         }
 

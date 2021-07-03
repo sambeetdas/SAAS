@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saas.Model", "Saas.Model\Sa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saas.UI", "Saas.UI\Saas.UI.csproj", "{161B4C7E-0D03-430C-8337-F937D8E75C06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saas.Service.Test", "Saas.Service.Test\Saas.Service.Test.csproj", "{6EA8AF05-7DD1-47C3-B903-0F7558781A08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saas.Service.Test", "Saas.Service.Test\Saas.Service.Test.csproj", "{6EA8AF05-7DD1-47C3-B903-0F7558781A08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saas.Business", "Saas.Business\Saas.Business.csproj", "{E3BB5E6B-6CE0-4BD3-9D7B-4250D1258DD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{6EA8AF05-7DD1-47C3-B903-0F7558781A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EA8AF05-7DD1-47C3-B903-0F7558781A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EA8AF05-7DD1-47C3-B903-0F7558781A08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3BB5E6B-6CE0-4BD3-9D7B-4250D1258DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3BB5E6B-6CE0-4BD3-9D7B-4250D1258DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3BB5E6B-6CE0-4BD3-9D7B-4250D1258DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3BB5E6B-6CE0-4BD3-9D7B-4250D1258DD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
