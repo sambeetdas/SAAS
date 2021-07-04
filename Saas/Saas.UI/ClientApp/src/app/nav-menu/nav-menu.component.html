@@ -16,8 +16,13 @@
         <ul class="navbar-nav flex-grow">
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
-              [routerLinkActiveOptions]="{ exact: true }">
+              [routerLinkActiveOptions]="{ exact: true }" *ngIf="!authentication?.isAuthenticated">
             <a class="nav-link text-dark" [routerLink]="['/login']">Sign in</a>
+          </li>
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }" *ngIf="authentication?.isAuthenticated">
+            <a class="nav-link text-dark" [routerLink]="['/login']" (click)="Logout()">Sign out</a>
           </li>
         </ul>
       </div>

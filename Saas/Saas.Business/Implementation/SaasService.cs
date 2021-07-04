@@ -1,6 +1,7 @@
 ﻿using Saas.Business.Interface;
 using Saas.DbLib.Interface;
 using Saas.Model.Core;
+using Saas.Script.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +14,27 @@ namespace Saas.Business.Implementation
     {
         private readonly IServiceDbManager _serviceDbManager;
         private readonly IScriptDbManager _scriptDbManager;
-        public SaasService(IServiceDbManager serviceDbManager, IScriptDbManager scriptDbManager)
+        private readonly IScriptManager _scriptManager;
+        public SaasService(IServiceDbManager serviceDbManager, IScriptDbManager scriptDbManager, IScriptManager scriptManager)
         {
             _serviceDbManager = serviceDbManager;
             _scriptDbManager = scriptDbManager;
+            _scriptManager = scriptManager;
         }
 
         public List<ServiceReference> GetAllServices()
         {
             var serviceDetails = _serviceDbManager.GetAllServices();
             return serviceDetails;
+        }
+
+        public ScriptReference ValidateScript(ScriptReference script)
+        {
+            if (_scriptManager.ValidateScript<dynamic>(script.Script))
+            {
+                return script;
+            }
+            return null;
         }
 
         public ScriptReference AddScript(ScriptReference script)

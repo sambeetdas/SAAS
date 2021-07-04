@@ -49,7 +49,19 @@ export class ScriptComponent {
   }
 
   Validate(script: Script) {
-    console.log(script);
+    const httpHeader = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+
+    this.http.post(this.utility.serverUrl + '/api/Service/ValidateScript', script, httpHeader).subscribe(result => {
+      if (result != null) {
+        console.log(result);
+      }
+    }, error => {
+    });
 
   }
 

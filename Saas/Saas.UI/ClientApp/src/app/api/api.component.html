@@ -22,6 +22,7 @@
         Last Updated
       </th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -37,6 +38,7 @@
       <td>{{service?.resource}}</td>
       <td>{{service?.updateDate}}</td>
       <td><button type="button" class="btn btn-primary btn-sm" (click)="GotoScript(service?.serviceReferenceId)">Script</button></td>
+      <td><button type="button" class="btn btn-success btn-sm" (click)="GetScriptDetail(service?.serviceReferenceId)">Detail</button></td>
     </tr>
   </tbody>
 </table>

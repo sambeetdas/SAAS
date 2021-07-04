@@ -61,5 +61,10 @@ namespace Saas.Script.Implementation
                 string error = ex.Message;
             }
         }
+
+        public bool ValidateScript<T>(string serviceScript)
+        {
+            return false;
+        }
     }
 }

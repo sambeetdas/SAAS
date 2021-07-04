@@ -37,6 +37,7 @@ namespace Saas.Business.Implementation
         {
             
             var subscribedUser = _subscriptionDbManager.ValidateSubsription(subscribe);
+            subscribedUser.SubscribedPassword = string.Empty;
             return subscribedUser;
         }
     }

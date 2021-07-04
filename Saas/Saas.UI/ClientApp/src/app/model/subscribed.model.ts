@@ -1,4 +1,5 @@
 export class SubscribedModel {
+  subscribedId: string;
   subcriptionCode: string;
   subscribedEmail: string;
   subscribedPhone: string;

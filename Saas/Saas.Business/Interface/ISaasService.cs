@@ -10,6 +10,7 @@ namespace Saas.Business.Interface
     public interface ISaasService
     {
         List<ServiceReference> GetAllServices();
+        ScriptReference ValidateScript(ScriptReference script);
         ScriptReference AddScript(ScriptReference script);
         List<ScriptReference> GetServiceScript(Guid serviceReferenceId);
     }

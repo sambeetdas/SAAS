@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { APIComponent } from './api/api.component';
 import { ScriptComponent } from './script/script.component';
 import { Utility } from './common/utility';
+import { AuthGuard } from './common/authguard';
 
 
 @NgModule({
@@ -32,11 +33,11 @@ import { Utility } from './common/utility';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'subscribe/:subscriptionCode', component: SubscriptionComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'api', component: APIComponent },
-      { path: 'script/:serviceReferenceId', component: ScriptComponent },
+      { path: 'api', component: APIComponent, canActivate: [AuthGuard] },
+      { path: 'script/:serviceReferenceId', component: ScriptComponent, canActivate: [AuthGuard]},
     ])
   ],
-  providers: [Utility],
+  providers: [Utility, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

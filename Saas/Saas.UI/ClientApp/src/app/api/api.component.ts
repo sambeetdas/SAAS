@@ -45,4 +45,8 @@ export class APIComponent {
     this.router.navigate(['/script', serviceReferenceId]);
   }
 
+  GetScriptDetail(serviceReferenceId: string) {
+
+  }
+
 }

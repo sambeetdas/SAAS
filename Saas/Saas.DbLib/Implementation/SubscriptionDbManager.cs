@@ -94,7 +94,7 @@ namespace Saas.DbLib.Implementation
                 {
                     if (subscribedUser.SubscribedPassword == subscribe.SubscribedPassword && subscribedUser.Status == "A")
                     {
-                        return subscribe;
+                        return subscribedUser;
                     }                   
                 }
             }

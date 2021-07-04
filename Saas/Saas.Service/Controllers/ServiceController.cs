@@ -26,6 +26,18 @@ namespace Saas.Service.Controllers
         }
 
         [HttpPost]
+        public ScriptReference ValidateScript([FromBody] ScriptReference script)
+        {
+            if (!ModelState.IsValid)
+            {
+                throw new ValidationException("Invalid Model");
+            }
+
+            var validatedScript = _service.ValidateScript(script);
+            return validatedScript;
+        }
+
+        [HttpPost]
         public ScriptReference AddScript([FromBody] ScriptReference script) //TODO : Add SubscriptionId as Param
         {
             if (!ModelState.IsValid)
@@ -44,5 +56,6 @@ namespace Saas.Service.Controllers
             var scripts = _service.GetServiceScript(serviceReferenceId);
             return scripts;
         }
+
     }
 }
