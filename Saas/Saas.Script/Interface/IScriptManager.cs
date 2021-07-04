@@ -9,7 +9,7 @@ namespace Saas.Script.Interface
     public interface IScriptManager
     {
         void ExecuteScript<T>(string serviceScript, ref T input);
-        bool ValidateScript<T>(string serviceScript);
+        bool ValidateScript(string serviceScript, string saasModel);
 
     }
 }

@@ -62,8 +62,32 @@ namespace Saas.Script.Implementation
             }
         }
 
-        public bool ValidateScript<T>(string serviceScript)
+        public bool ValidateScript(string serviceScript, string saasModel)
         {
+            try
+            {
+                Type t = Type.GetType(saasModel);
+
+                var input = Activator.CreateInstance(t);
+
+                string inputType = input.GetType().FullName;
+                string code = ScriptUtil.GetCSharpScript(serviceScript, inputType);
+
+                code = $"public {inputType} input = new  {inputType}(); " + code;
+
+                var scriptOptions = ScriptUtil.SetReferences(t);
+                var scriptState = CSharpScript.RunAsync(code: code,
+                                                        options: scriptOptions,
+                                                        globals: null
+                                                        ).Result;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
             return false;
         }
     }

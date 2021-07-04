@@ -30,10 +30,18 @@ namespace Saas.Business.Implementation
 
         public ScriptReference ValidateScript(ScriptReference script)
         {
-            if (_scriptManager.ValidateScript<dynamic>(script.Script))
+            try
             {
-                return script;
+                if (_scriptManager.ValidateScript(script.Script, "Saas.Model.Service.UserModel, Saas.Model"))
+                {
+                    return script;
+                }
             }
+            catch (Exception)
+            {
+                throw;
+            }    
+           
             return null;
         }
 
