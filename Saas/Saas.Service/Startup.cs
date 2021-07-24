@@ -4,13 +4,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Saas.Business.Implementation;
 using Saas.Business.Interface;
 using Saas.DbLib.Implementation;
 using Saas.DbLib.Interface;
+using Saas.Model.Core;
+using Saas.MongoDbLib.Implementation;
+using Saas.MongoDbLib.Interface;
 using Saas.Script.Implementation;
 using Saas.Script.Interface;
+using Saas.Service.Middleware;
 
 namespace Saas.Service
 {
@@ -38,6 +43,9 @@ namespace Saas.Service
             string sqlConnectionStr = Configuration.GetConnectionString("SqlServerConnection");
             //services.AddDbContextPool<SaasDbContext>(options => options.UseSqlServer(sqlConnectionStr));
 
+            services.Configure<MongoDbSetting>(Configuration.GetSection(nameof(MongoDbSetting)));
+            services.AddSingleton<MongoDbSetting>(sp =>sp.GetRequiredService<IOptions<MongoDbSetting>>().Value);
+
             #region Business_Layer
 
             services.AddTransient<ISubscription, Subscription>();
@@ -54,6 +62,8 @@ namespace Saas.Service
 
             services.AddTransient<IScriptManager, ScriptManager>();
 
+            services.AddTransient<ILogManager, LogManager>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -65,6 +75,8 @@ namespace Saas.Service
         {
             app.UseCors("AllowAllHeaders");
 
+            app.UseSaasLog();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -74,7 +86,7 @@ namespace Saas.Service
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseRouting();           
 
             app.UseAuthorization();
 

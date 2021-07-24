@@ -13,6 +13,7 @@
     <ProjectReference Include="..\Saas.Business\Saas.Business.csproj" />
     <ProjectReference Include="..\Saas.DbLib\Saas.DbLib.csproj" />
     <ProjectReference Include="..\Saas.Model\Saas.Model.csproj" />
+    <ProjectReference Include="..\Saas.MongoDbLib\Saas.MongoDbLib.csproj" />
     <ProjectReference Include="..\Saas.Script\Saas.Script.csproj" />
   </ItemGroup>
 
