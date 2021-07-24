@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Saas.Service.Middleware
@@ -22,38 +23,29 @@ namespace Saas.Service.Middleware
             _logManager = logManager;
         }
 
-        public Task Invoke(HttpContext httpContext)
+        public async Task Invoke(HttpContext httpContext)
         {
             try
             {
-                return _next(httpContext);
+                await _next(httpContext);
             }
             finally
             {
-                string requestBody = string.Empty;
-                string responseBody = string.Empty;
-                if (httpContext.Request?.ContentLength != null)
-                {
-                    requestBody = new System.IO.StreamReader(httpContext.Request?.Body).ReadToEndAsync().Result;
-                }
+                httpContext.Request.EnableBuffering();
 
-                if (httpContext.Response?.ContentLength != null)
-                {
-                    responseBody = new System.IO.StreamReader(httpContext.Request?.Body).ReadToEndAsync().Result;
-                }
-               
-
-                _logManager.InsertLog(new LogModel() { 
-                LogId = Guid.NewGuid(),
-                ApiType = httpContext.Request?.Method,
-                ApiName =   httpContext.Request?.Path.Value,
-                Request = requestBody,
-                Response = responseBody,
-                Scheme = httpContext.Request.Scheme,
-                Status = httpContext.Response?.StatusCode.ToString(),
-                RequestedDateTime = DateTime.Now,
-                User = "SAMBEET"
+                await _logManager.InsertLog(new LogModel() { 
+                            LogId = Guid.NewGuid(),
+                            ApiType = httpContext.Request?.Method,
+                            ApiName =   httpContext.Request?.Path.Value,
+                            Request = httpContext.Request?.ContentLength == null ? String.Empty : await new System.IO.StreamReader(httpContext.Request?.Body, encoding: Encoding.UTF8, detectEncodingFromByteOrderMarks: false, leaveOpen: true).ReadToEndAsync(),
+                            Response = httpContext.Response?.ContentLength == null ? String.Empty : await new System.IO.StreamReader(httpContext.Response?.Body).ReadToEndAsync(),
+                            Scheme = httpContext.Request.Scheme,
+                            Status = httpContext.Response?.StatusCode.ToString(),
+                            RequestedDateTime = DateTime.Now,
+                            User = "SAMBEET"
                 });
+
+                httpContext.Request.Body.Position = 0;
             }
         }
     }
