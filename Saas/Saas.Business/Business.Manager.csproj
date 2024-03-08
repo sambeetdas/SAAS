@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Saas.DbLib\Database.Manager.csproj" />
+    <ProjectReference Include="..\Saas.Model\Models.csproj" />
+    <ProjectReference Include="..\Saas.Script\Script.Manager.csproj" />
+  </ItemGroup>
+
+</Project>

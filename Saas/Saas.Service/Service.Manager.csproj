@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Saas.Business\Business.Manager.csproj" />
+    <ProjectReference Include="..\Saas.DbLib\Database.Manager.csproj" />
+    <ProjectReference Include="..\Saas.Model\Models.csproj" />
+    <ProjectReference Include="..\Saas.MongoDbLib\MongoDb.Manager.csproj" />
+    <ProjectReference Include="..\Saas.Script\Script.Manager.csproj" />
+  </ItemGroup>
+
+</Project>
