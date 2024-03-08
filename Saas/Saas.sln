@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Manager", "Saas.Service\Service.Manager.csproj", "{51A085CA-7AF5-4D4D-917C-D6804B025552}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Manager", "Service.Manager\Service.Manager.csproj", "{51A085CA-7AF5-4D4D-917C-D6804B025552}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.Manager", "Saas.DbLib\Database.Manager.csproj", "{21658A6E-3568-4149-BE50-91C287E4C200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.Manager", "Database.Manager\Database.Manager.csproj", "{21658A6E-3568-4149-BE50-91C287E4C200}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Script.Manager", "Saas.Script\Script.Manager.csproj", "{E190EBA7-4A78-4A22-A9E1-3D7538725CFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Script.Manager", "Script.Manager\Script.Manager.csproj", "{E190EBA7-4A78-4A22-A9E1-3D7538725CFD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Saas.Model\Models.csproj", "{B9D3B6FF-5C13-456A-97D1-CBF5C959D92A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Admin.UI", "Saas.UI\Service.Admin.UI.csproj", "{161B4C7E-0D03-430C-8337-F937D8E75C06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Admin.UI", "Service.Admin.UI\Service.Admin.UI.csproj", "{161B4C7E-0D03-430C-8337-F937D8E75C06}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Test.Manager", "Saas.Service.Test\Service.Test.Manager.csproj", "{6EA8AF05-7DD1-47C3-B903-0F7558781A08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Test.Manager", "Service.Test.Manager\Service.Test.Manager.csproj", "{6EA8AF05-7DD1-47C3-B903-0F7558781A08}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Manager", "Saas.Business\Business.Manager.csproj", "{E3BB5E6B-6CE0-4BD3-9D7B-4250D1258DD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Manager", "Business.Manager\Business.Manager.csproj", "{E3BB5E6B-6CE0-4BD3-9D7B-4250D1258DD7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDb.Manager", "Saas.MongoDbLib\MongoDb.Manager.csproj", "{8847B641-C6D6-4533-93C7-E34F8342B6AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDb.Manager", "MongoDb.Manager\MongoDb.Manager.csproj", "{8847B641-C6D6-4533-93C7-E34F8342B6AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
