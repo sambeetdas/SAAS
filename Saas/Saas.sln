@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.Manager", "Databas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Script.Manager", "Script.Manager\Script.Manager.csproj", "{E190EBA7-4A78-4A22-A9E1-3D7538725CFD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Saas.Model\Models.csproj", "{B9D3B6FF-5C13-456A-97D1-CBF5C959D92A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{B9D3B6FF-5C13-456A-97D1-CBF5C959D92A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Admin.UI", "Service.Admin.UI\Service.Admin.UI.csproj", "{161B4C7E-0D03-430C-8337-F937D8E75C06}"
 EndProject
