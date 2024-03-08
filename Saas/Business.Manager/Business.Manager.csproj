@@ -1,13 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Saas.DbLib\Database.Manager.csproj" />
-    <ProjectReference Include="..\Saas.Model\Models.csproj" />
-    <ProjectReference Include="..\Saas.Script\Script.Manager.csproj" />
+    <ProjectReference Include="..\Database.Manager\Database.Manager.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\MongoDb.Manager\MongoDb.Manager.csproj" />
+    <ProjectReference Include="..\Database.Manager\Database.Manager.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Script.Manager\Script.Manager.csproj" />
   </ItemGroup>
 
 </Project>
